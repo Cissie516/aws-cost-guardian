@@ -4,6 +4,7 @@ import urllib.request
 
 from scanners.ebs_scanner import scan as scan_ebs
 from scanners.eip_scanner import scan as scan_eip
+from scanners.snapshot_scanner import scan as scan_snapshots
 
 
 def send_slack_message(message: str):
@@ -37,23 +38,30 @@ def handler(event, context):
     print("\n" + "=" * 50 + "\n")
 
     eip_result = scan_eip(region="ap-southeast-2")
+    print("\n" + "=" * 50 + "\n")
+    snapshot_result = scan_snapshots(region="ap-southeast-2")
+    
+    
+    
 
     total_savings = (
         ebs_result["total_cost"] +
-        eip_result["total_cost"]
+        eip_result["total_cost"] +
+        snapshot_result["total_cost"]
     )
 
     # Build Slack message
     message_lines = [
-        "🔍 *AWS Cost Guardian Weekly Report*",
-        "Region: ap-southeast-2",
-        "",
-        f"💾 *EBS Volumes*: {ebs_result['count']} unattached → ${ebs_result['total_cost']:.2f}/month",
-        f"📍 *Elastic IPs*: {eip_result['count']} idle → ${eip_result['total_cost']:.2f}/month",
-        "",
-        f"💰 *Total estimated waste: ${total_savings:.2f}/month*",
-    ]
-
+    "🔍 *AWS Cost Guardian Weekly Report*",
+    "Region: ap-southeast-2",
+    "",
+    f"💾 *EBS Volumes*: {ebs_result['count']} unattached → ${ebs_result['total_cost']:.2f}/month",
+    f"📍 *Elastic IPs*: {eip_result['count']} idle → ${eip_result['total_cost']:.2f}/month",
+    f"📸 *Snapshots*: {snapshot_result['count']} to review → ${snapshot_result['total_cost']:.2f}/month",
+    "",
+    f"💰 *Total estimated waste: ${total_savings:.2f}/month*",
+]
+    
     send_slack_message("\n".join(message_lines))
 
     print("\n=== AWS Cost Guardian Scan Completed ===")

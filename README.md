@@ -137,7 +137,7 @@ Prices change. Verify against the [official EBS pricing page](https://aws.amazon
 - [x] EBS unattached volume detection
 - [x] Command-line `--region` argument (v0.2)
 - [x] Idle Elastic IP detection
-- [ ] Old / orphaned EBS snapshot detection
+- [x] Old / orphaned EBS snapshot detection
 - [ ] Oversized RDS instance analysis
 - [x] Slack notification integration
 - [x] Scheduled execution on AWS Lambda + EventBridge
