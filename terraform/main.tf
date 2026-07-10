@@ -36,7 +36,8 @@ resource "aws_iam_role_policy" "lambda_ec2_policy" {
       Effect = "Allow"
       Action = [
         "ec2:DescribeVolumes",
-        "ec2:DescribeAddresses"
+        "ec2:DescribeAddresses",
+        "ec2:DescribeSnapshots",
       ]
       Resource = "*"
     }]

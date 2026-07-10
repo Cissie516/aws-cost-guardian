@@ -9,7 +9,7 @@ from scanners.snapshot_scanner import scan as scan_snapshots
 
 def send_slack_message(message: str):
     webhook_url = os.environ.get("SLACK_WEBHOOK_URL")
-
+   
     if not webhook_url:
         print("[WARN] SLACK_WEBHOOK_URL not set, skipping Slack notification")
         return
