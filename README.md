@@ -141,7 +141,7 @@ Prices change. Verify against the [official EBS pricing page](https://aws.amazon
 - [ ] Oversized RDS instance analysis
 - [x] Slack notification integration
 - [x] Scheduled execution on AWS Lambda + EventBridge
-- [ ] Terraform module for one-command deployment
+- [x] Terraform module for one-command deployment
 - [ ] Multi-account scanning via IAM role assumption
 
 ## Tech stack
