@@ -138,7 +138,7 @@ Prices change. Verify against the [official EBS pricing page](https://aws.amazon
 - [x] Command-line `--region` argument (v0.2)
 - [x] Idle Elastic IP detection
 - [x] Old / orphaned EBS snapshot detection
-- [ ] Oversized RDS instance analysis
+- [x] Oversized RDS instance analysis
 - [x] Slack notification integration
 - [x] Scheduled execution on AWS Lambda + EventBridge
 - [x] Terraform module for one-command deployment
