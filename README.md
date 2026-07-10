@@ -135,7 +135,7 @@ Prices change. Verify against the [official EBS pricing page](https://aws.amazon
 ## Roadmap
 
 - [x] EBS unattached volume detection
-- [ ] Command-line `--region` argument (v0.2)
+- [x] Command-line `--region` argument (v0.2)
 - [ ] Idle Elastic IP detection
 - [ ] Old / orphaned EBS snapshot detection
 - [ ] Oversized RDS instance analysis
