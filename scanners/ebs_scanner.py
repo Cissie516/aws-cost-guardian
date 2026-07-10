@@ -6,6 +6,7 @@ that are wasting money.
 
 import boto3
 import json
+import argparse
 from datetime import datetime, timezone
 
 # Pricing reference (ap-southeast-2, as of May 2026)
@@ -95,4 +96,7 @@ def scan(region: str = 'ap-southeast-2'):
     )
 
 if __name__ == '__main__':
-    scan()
+    parser = argparse.ArgumentParser(description='Scan AWS for cost waste')
+    parser.add_argument('--region', default='ap-southeast-2', help='AWS region to scan')
+    args = parser.parse_args()
+    scan(region=args.region)
