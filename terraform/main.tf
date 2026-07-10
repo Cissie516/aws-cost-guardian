@@ -38,6 +38,8 @@ resource "aws_iam_role_policy" "lambda_ec2_policy" {
         "ec2:DescribeVolumes",
         "ec2:DescribeAddresses",
         "ec2:DescribeSnapshots",
+        "rds:DescribeDBInstances",
+        "cloudwatch:GetMetricStatistics",
       ]
       Resource = "*"
     }]
