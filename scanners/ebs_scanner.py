@@ -94,7 +94,12 @@ def scan(region: str = 'ap-southeast-2'):
         f"\nTotal: {len(unattached)} unattached volumes, "
         f"${total_waste:.2f}/month potential savings."
     )
-
+    return {
+    "count": len(unattached),
+    "total_cost": total_waste,
+    "findings": unattached,
+}
+    
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Scan AWS for cost waste')
     parser.add_argument('--region', default='ap-southeast-2', help='AWS region to scan')

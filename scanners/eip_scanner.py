@@ -52,6 +52,12 @@ def scan(region: str = "ap-southeast-2"):
         f"\nTotal: {len(idle_eips)} idle Elastic IPs, "
         f"${total_waste:.2f}/month potential savings."
     )
+    
+    return {
+    "count": len(idle_eips),
+    "total_cost": total_waste,
+    "findings": idle_eips,
+}
 
 
 if __name__ == "__main__":
