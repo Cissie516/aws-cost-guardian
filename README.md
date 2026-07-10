@@ -139,7 +139,7 @@ Prices change. Verify against the [official EBS pricing page](https://aws.amazon
 - [x] Idle Elastic IP detection
 - [ ] Old / orphaned EBS snapshot detection
 - [ ] Oversized RDS instance analysis
-- [ ] Slack notification integration
+- [x] Slack notification integration
 - [x] Scheduled execution on AWS Lambda + EventBridge
 - [ ] Terraform module for one-command deployment
 - [ ] Multi-account scanning via IAM role assumption
