@@ -219,3 +219,9 @@ __marimo__/
 
 package/
 lambda_deployment.zip
+
+# Terraform
+terraform/.terraform/
+terraform/lambda_deployment.zip
+terraform/terraform.tfstate
+terraform/terraform.tfstate.backup
